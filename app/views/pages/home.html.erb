@@ -1,5 +1,31 @@
-<div class="banner" style="background-image: url('https://images.unsplash.com/photo-1465697558515-acefe0316e17?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c2ce5293d2c491df950c3e41d5f7281e&auto=format&fit=crop&w=1353&q=80');">
-  <div class="banner-content">
-  <h1>Book unique outdoor equipment worldwide</h1>
+
+
+
+<div class="carousel slide carousel-fade" data-ride="carousel">
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+    </div>
+    <div class="item">
+    </div>
+    <div class="item">
+    </div>
   </div>
 </div>
+
+<div class="banner-content text-center">
+  <h1>Book unique outdoor equipment worldwide</h1>
+ <!--  <div class="white-search-box">
+    <i class="fas fa-search form-control-feedback"></i>
+  </div> -->
+  <%= form_tag(gears_path, method: :get, class: "form-inline home-form form-group") do %>
+  <div class="input-group">
+    <span class="input-group-addon"><i class="fas fa-search"></i></span>
+    <%= text_field_tag :q, params[:q], placeholder: "A category you like?", class: "search form-control" %>
+    <%= submit_tag 'Search', name: nil, class: "btn-home-search" %>
+  </div>
+  <% end %>
+  <%= link_to "View all equipment", gears_path, class: "show-all-equipment" %>
+</div>
+

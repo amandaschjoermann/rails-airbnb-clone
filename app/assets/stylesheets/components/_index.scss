@@ -2,3 +2,32 @@
 @import "alert";
 @import "navbar";
 @import "banner";
+@import "card";
+@import "category-navbar";
+@import "carousel";
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: rgba(24, 116, 195,0.9)
+}
+
+.wrapper {
+  text-align: left;
+  color: black;
+  width: 100%;
+  height: calc(100% - 90px);
+  margin-top: 90px;
+  background-color: white;
+  >h2 {
+    line-height: 5px;
+    margin-top: 40px;
+    margin-left: 40px;
+  }
+  >p {
+    margin-bottom: 20px;
+    margin-left: 40px;
+  }
+}

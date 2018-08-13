@@ -1,5 +1,3 @@
-/* Main navbar */
-
 .navigation-container {
   width: 100%;
   position: absolute;
@@ -42,14 +40,24 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  margin-right: 10px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.08);
+  opacity: 0.8;
+  margin-right: 20px;
   padding: 15px 20px;
   color: white;
   font-size: 16px;
 }
 .navbar-wagon-link:hover {
-  color: rgba(210,210,210,1);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  opacity: 1;
+  color: white;
+  border-bottom: 3px solid white;
   text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Dropdown menu */
@@ -81,8 +89,4 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
-}
-
-.active {
-  border-bottom: 3px solid white;
 }
