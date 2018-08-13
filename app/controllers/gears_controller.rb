@@ -2,7 +2,11 @@ class GearsController < ApplicationController
   before_action :set_gear, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @gears = Gear.all?
+    @gears = if params[:q]
+      Gear.where('category ILIKE ?', "%#{params[:q]}%")
+    else
+      Gear.all
+    end
   end
 
   def show

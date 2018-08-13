@@ -8,10 +8,9 @@
 
     <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-      <%= link_to 'Become a host', "#", class: "active navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to 'Sign Up', "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to 'Sign In', "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to 'Rent out', "#", class: "active navbar-wagon-item navbar-wagon-link" %>
 
+      <% if user_signed_in? %>
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
@@ -25,6 +24,10 @@
           </ul>
         </div>
       </div>
+      <% else %>
+        <%= link_to 'Sign Up', "#", class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to 'Sign In', "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
     </div>
   </div>
 </div>
