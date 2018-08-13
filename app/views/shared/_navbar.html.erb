@@ -2,9 +2,10 @@
   <div class="navbar-wagon">
     <!-- Logo -->
 
-    <%= link_to root_path class: "navbar-wagon-brand" do %>
+    <%= link_to root_path do %>
       <%= image_tag 'mountain-logo.png', class: "navbar-logo" %>
     <% end %>
+    <h4 class="logo-text">Parachute <span class="vl"></span> &nbsp;me</h4>
 
     <div class="navbar-wagon-right hidden-xs hidden-sm">
 
@@ -25,8 +26,8 @@
         </div>
       </div>
       <% else %>
-        <%= link_to 'Sign Up', "#", class: "navbar-wagon-item navbar-wagon-link" %>
-        <%= link_to 'Sign In', "#", class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to 'Sign up', "#", class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to 'Sign in', "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <% end %>
     </div>
   </div>
