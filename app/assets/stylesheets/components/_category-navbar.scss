@@ -9,14 +9,23 @@
 
 .category-button {
   position: absolute;
-  color: rgba(120,120,120,0.9);
+  color: rgba(120,120,120,0.8);
   vertical-align: middle;
-  font-size: 16px;
-  top: 20px;
-  left: 40px;
-  height: 30px;
-  width: 75px;
+  font-size: 20px;
+  top: 16px;
+  left: 60px;
+  height: 40px;
+  width: 90px;
   box-shadow: 0 0 2px rgba(120,120,120,0.9);
-  padding: 3px 8px;
+  padding: 5px 8px;
   border-radius: 2px;
+  transition: 0.2s ease;
+  &:hover {
+    color: rgba(110,110,110,1);
+    box-shadow: 0 0 2px rgba(7, 130, 183,0.8);
+  }
+}
+
+a.category-button  {
+  text-decoration: none;
 }

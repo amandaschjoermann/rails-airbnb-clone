@@ -5,6 +5,10 @@
   position: relative;
   height: 325px;
   width: 350px;
+  transition: 0.2s ease;
+  &:hover {
+    filter: brightness(75%);
+  }
 }
 
 .card-header {
