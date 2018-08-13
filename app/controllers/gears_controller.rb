@@ -2,9 +2,11 @@ class GearsController < ApplicationController
   before_action :set_gear, only: [ :show, :edit, :update, :destroy ]
 
   def index
+    @gears = Gear.all?
   end
 
   def show
+    @gear = Gear.find(params[:id])
   end
 
   def new
