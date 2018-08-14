@@ -1,3 +1,6 @@
-import "bootstrap";
+// import "bootstrap";
 
-$('.carousel').carousel();
+
+// // $('.carousel.slide').carousel()
+
+// $('.carousel').carousel();

@@ -1,9 +1,5 @@
-
-
-
 <div class="carousel slide carousel-fade" data-ride="carousel">
 
-  <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
     </div>
@@ -13,12 +9,8 @@
     </div>
   </div>
 </div>
-
-<div class="banner-content text-center">
+<div class="search-form-content text-center">
   <h1>Book unique outdoor equipment worldwide</h1>
- <!--  <div class="white-search-box">
-    <i class="fas fa-search form-control-feedback"></i>
-  </div> -->
   <%= form_tag(gears_path, method: :get, class: "form-inline home-form form-group") do %>
   <div class="input-group">
     <span class="input-group-addon"><i class="fas fa-search"></i></span>
@@ -28,4 +20,3 @@
   <% end %>
   <%= link_to "View all equipment", gears_path, class: "show-all-equipment" %>
 </div>
-
