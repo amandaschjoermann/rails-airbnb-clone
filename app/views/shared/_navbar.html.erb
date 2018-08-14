@@ -9,7 +9,7 @@
 
     <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-      <%= link_to 'Rent out', "#", class: "active navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to 'Rent out', new_gear_path, class: "active navbar-wagon-item navbar-wagon-link" %>
 
       <% if user_signed_in? %>
       <div class="navbar-wagon-item">
@@ -26,9 +26,41 @@
         </div>
       </div>
       <% else %>
-        <%= link_to 'Sign up', new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
-        <%= link_to 'Sign in', new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to 'Sign up', new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link", "data-toggle" => "modal", "data-target" => "#signup-Modal" %>
+        <%= link_to 'Sign in', new_user_session_path, class: "navbar-wagon-item navbar-wagon-link", "data-toggle" => "modal", "data-target" => "#signin-Modal" %>
       <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- Sign up Modal -->
+<div class="modal fade" id="signup-Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= render 'shared/sign-up-form' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sign in Modal -->
+<div class="modal fade" id="signin-Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= render "shared/sign-in-form" %>
+      </div>
     </div>
   </div>
 </div>
