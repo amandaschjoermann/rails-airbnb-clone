@@ -27,10 +27,15 @@
   </div>
 
   <div class="form-group">
-    <%= f.label "Price (DKK) / Day".upcase %>
+    <%= f.label "Price (DKK) / Day" %>
     <%= f.number_field :price, class: 'form-control' %>
   </div>
 
-<%= f.submit class: 'btn mm-button' %>
+  <div class="form-group">
+    <%= f.input :photo, class: 'form-control' %>
+    <%= f.input :photo_cache, as: :hidden %>
+  </div>
+
+<%= f.submit class: 'btn' %>
 <% end %>
 <% end %>
