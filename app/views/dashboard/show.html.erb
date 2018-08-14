@@ -1,0 +1,27 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+  <h2>My Dashboard</h2>
+
+  <h4>My Gear</h4>
+
+  <ul>
+    <% @gears.each do |gear| %>
+    <% if gear.user_id == current_user.id %>
+    <li>
+      <p><%= gear.name %> | <%= gear.description %></p>
+    </li>
+    <% end %>
+    <% end %>
+  </ul>
+
+
+  <button class="btn"><%= link_to "Add New Equipment", new_gear_path  %></button>
+
+  <h4>My Upcoming Rentals</h4>
+
+</div>

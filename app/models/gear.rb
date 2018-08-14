@@ -2,7 +2,7 @@ class Gear < ApplicationRecord
 
 
   def self.categories
-    %w[hiking biking martial-arts diving sky-diving]
+    %w[Hiking Biking Martial-Arts Diving Sky-Diving]
   end
 
   has_many :bookings
