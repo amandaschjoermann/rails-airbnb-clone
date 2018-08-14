@@ -12,30 +12,28 @@
 <!-- [...] all the fields -->
 <%= simple_form_for(@gear) do |f| %>
 
-  <div class="form-group">
-    <%= f.label "Name" %>
-    <%= f.text_field :name, class: 'form-control' %>
-  </div>
+<div class="form-group name">
+  <%= f.text_field :name, class: 'form-control name', placeholder: "Name" %>
+</div>
 
-  <div class="form-group">
-    <%= f.input :category, collection: %w[Hiking Biking Martial-Arts Diving Sky-Diving], class: 'form-control' %>
-  </div>
+<div class="form-group category">
+  <%= f.input :category, collection: %w[Hiking Biking Martial-Arts Diving Sky-Diving], class: 'form-control category', label: "Choose category" %>
+</div>
 
-  <div class="form-group">
-    <%= f.label "Description" %>
-    <%= f.text_field :description, class: 'form-control' %>
-  </div>
+<div class="form-group description">
+  <%= f.input :description, as: :text, class: 'form-control description', label: false, placeholder: "Add a description" %>
+</div>
 
-  <div class="form-group">
-    <%= f.label "Price (DKK) / Day" %>
-    <%= f.number_field :price, class: 'form-control' %>
-  </div>
+<div class="form-group price">
+  <%= f.number_field :price, class: 'form-control price', placeholder: "Price: DKK / Day" %>
+</div>
 
-  <div class="form-group">
-    <%= f.input :photo, class: 'form-control' %>
-    <%= f.input :photo_cache, as: :hidden %>
-  </div>
+<div class="form-group photo">
+  <%= f.input :photo, class: 'form-control photo', label: "Upload photo(s)" %>
+  <%= f.input :photo_cache, as: :hidden %>
+</div>
 
-<%= f.submit class: 'btn' %>
+<%= f.submit class: 'btn create-gear' %>
 <% end %>
 <% end %>
+
