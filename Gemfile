@@ -18,6 +18,8 @@ gem 'webpacker'
 gem 'devise'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
+gem "simple_calendar", "~> 2.0"
+
 
 
 group :development do
