@@ -1,12 +1,13 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="container">
+<div class="gear-main-wrapper text-center">
+  <div class="add-gear-wrapper">
+  <h4>Add new gear</h4>
+    <%= render 'form', gear: @gear %>
 
-  <%= render 'form', gear: @gear %>
+    <%= link_to gears_path do %>
+      <div class="go-back">
+        <i class="far fa-times-circle"></i>
+      </div>
+    <% end %>
 
-  <%= link_to "Return to Index", gears_path  %>
-
+  </div>
 </div>
