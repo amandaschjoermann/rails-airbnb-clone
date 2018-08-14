@@ -1,7 +1,7 @@
-.banner-content>h1 {
+.search-form-content>h1 {
   color: white;
-  margin: 200px auto;
-  margin-bottom: 50px;
+  margin: 0px auto;
+  margin-top: 250px;
   text-align: center;
   letter-spacing: -1px;
   text-shadow: 0 0 5px rgba(50,50,50,1);
@@ -16,7 +16,7 @@
   padding-right: 50px;
   border-radius: 25px;
   height: 50px;
-  width: 700px;
+  width: 300px;
   margin: 0 auto;
   font-size: 20px;
 }
@@ -48,15 +48,15 @@ a.show-all-equipment {
 }
 
 .home-form {
-  margin-left: -90px;
-  margin-bottom: 30px;
+  width: 400px;
+  margin: 20px auto;
 }
 
 .btn-home-search {
   position: absolute;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   border: 1px solid #206eb2;
-  margin-left: 0px;
+  right: -40px;
   color: white;
   font-size: 20px;
   padding-bottom: 10px;
@@ -79,8 +79,9 @@ a.show-all-equipment {
 .input-group-addon {
   border: 1px solid #ccc;
   border-right: 0px;
+  padding-top: 10px;
   padding-left: 20px;
-  padding-right: 40px;
+  padding-right: 20px;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
   background-color: #FFFFFF;

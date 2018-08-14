@@ -1,38 +1,39 @@
 <div class="wrapper">
-    <div class="category-navbar">
-      <%= link_to "Category", "#", class: "category-button" %>
-    </div>
-    <h2>Start exploring.</h2>
-    <hr/>
-    <p>Life is too short to stay indoors</p>
-    <%= image_tag 'globe.png', class: "globe-icon" %>
+  <div class="category-navbar text-inline">
+    <%= link_to "Category", "#", class: "details-button category-button" %>
+    <%= link_to "Dates", "#", class: "details-button available-button" %>
+  </div>
+  <h2>Start exploring.</h2>
+  <hr/>
+  <p>Life is too short to stay indoors</p>
+  <%= image_tag 'globe.png', class: "globe-icon" %>
 
-    <div class="container">
-      <div class="row">
-        <% 3.times do %>
-          <div class="col-xs-4">
+  <div class="container">
+    <div class="row">
+      <% @gears.each do |gear| %>
+      <div class="col-xs-4">
+        <%= link_to gear_path(gear) do %>
+        <div class="gear-wrapper">
+          <div class="gear-header">
+            <%= image_tag 'https://images.unsplash.com/photo-1517823382935-51bfcb0ec6bc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8b5c8bafdf01d553be4108029d2ed058&auto=format&fit=crop&w=1350&q=80', class: "gear-picture" %>
             <%= link_to "#" do %>
-            <div class="card">
-              <div class="card-header">
-                <%= image_tag 'https://images.unsplash.com/photo-1517823382935-51bfcb0ec6bc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8b5c8bafdf01d553be4108029d2ed058&auto=format&fit=crop&w=1350&q=80', class: "gear-picture" %>
-                <%= link_to "#" do %>
-                  <div class="love-icon">
-                    <i class="fas fa-heart"></i>
-                  </div>
-                <% end %>
-                <p class="gear-category">Category</p>
-              </div>
-              <div class="card-footer">
-                <h4 class="gear-name"><strong>Name</strong></h4>
-                <p class="gear-price">Price</p>
-                <p class="gear-rating">Rating</p>
-              </div>
+            <div class="love-icon">
+              <i class="fas fa-heart"></i>
             </div>
             <% end %>
+            <p class="gear-category">Category</p>
           </div>
+          <div class="gear-footer">
+            <h4 class="gear-name"><strong>Name</strong></h4>
+            <p class="gear-price">Price</p>
+            <p class="gear-rating">Rating</p>
+          </div>
+        </div>
         <% end %>
-      </div> <!-- closing row -->
-    </div> <!-- closing container -->
-  </div> <!-- closing wrapper -->
+      </div>
+      <% end %>
+    </div> <!-- closing row -->
+  </div> <!-- closing container -->
+</div> <!-- closing wrapper -->
 
 
