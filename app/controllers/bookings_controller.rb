@@ -13,9 +13,10 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.user_id = current_user.id
     @booking.gear = Gear.find(params[:gear_id])
     if @booking.save
-      redirect_to gear_path(@booking.gear)
+      redirect_to gears_path
     else
       render :new
     end

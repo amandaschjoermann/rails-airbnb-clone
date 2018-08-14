@@ -24,4 +24,14 @@
 
   <h4>My Upcoming Rentals</h4>
 
+  <ul>
+    <% @bookings.each do |booking| %>
+    <% if booking.user_id == current_user.id %>
+    <li>
+      <p><%= booking.start_date %> | <%= booking.end_date %></p>
+    </li>
+    <% end %>
+    <% end %>
+  </ul>
+
 </div>
