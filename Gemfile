@@ -22,9 +22,8 @@ gem 'jquery-rails'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem "simple_calendar", "~> 2.0"
-
-
-
+gem "geocoder"
+gem 'dotenv-rails', groups: [:development, :test]
 
 group :development do
   gem 'web-console', '>= 3.3.0'

@@ -8,11 +8,11 @@
   <%= image_tag 'globe.png', class: "globe-icon" %>
 
 
+
+
+  <div class="card-map-wrapper">
   <div class="container">
     <div class="row">
-
-
-
       <% @gears.each do |gear| %>
       <div class="col-xs-4">
         <%= link_to gear_path(gear) do %>
@@ -35,15 +35,15 @@
             <p class="gear-price"><%= gear.price %></p>
             <p class="gear-rating"><%= gear.rating %></p>
           </div>
+          <% end %>
         </div>
         <% end %>
-      </div>
-      <% end %>
+      </div> <!-- closing row -->
 
-
-
-    </div> <!-- closing row -->
-  </div> <!-- closing container -->
+    </div> <!-- closing container -->
+    <div id="map" data-markers="<%= @markers.to_json %>">
+  </div>
+</div>
 </div> <!-- closing wrapper -->
 
 <!-- Pick a category filter Modal -->
