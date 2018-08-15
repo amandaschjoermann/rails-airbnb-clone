@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   end
   resources :bookings
   get "dashboard", to: "dashboard#show", as: "dashboard"
+  get "gears/:category", to: "gears#index", as: "filter"
 end
