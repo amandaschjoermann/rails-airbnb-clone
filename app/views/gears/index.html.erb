@@ -56,12 +56,14 @@
       <div class="modal-body">
         <h2>Choose category</h2>
         <ul>
-          <form action="<%= gears_path %>" method="get", class: "inline-block">
-            <li><%= check_box_tag :category %> In water</li>
-            <li><%= check_box_tag :category %> Above ground</li>
-            <li><%= check_box_tag :category %> On land</li>
-            <input type="submit" value="Filter" />
-          </form>
+          <% Gear.categories.each do |category| %>
+            <%= link_to gears_path(q: category) do  %>
+              <li><p><%= category %></p></li>
+            <% end %>
+          <% end %>
+          <%= link_to gears_path do  %>
+            <li><p>Show All</p></li>
+          <% end %>
         </ul>
       </div>
     </div>
