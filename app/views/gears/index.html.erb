@@ -12,7 +12,6 @@
     <div class="row">
 
 
-
       <% @gears.each do |gear| %>
       <div class="col-xs-4">
         <%= link_to gear_path(gear) do %>
@@ -57,6 +56,16 @@
       </div>
       <div class="modal-body">
         <h2>Choose category</h2>
+        <ul>
+          <% Gear.categories.each do |category| %>
+          <%= link_to gears_path(@gear, :q => category) do  %>
+          <li><p><%= category %></p></li>
+          <% end %>
+          <% end %>
+          <%= link_to gears_path(@gear, :q => "") do  %>
+          <li><p>Show All</p></li>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>
