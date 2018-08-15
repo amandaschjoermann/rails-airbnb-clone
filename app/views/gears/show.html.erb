@@ -40,17 +40,17 @@
       <p class="description-detail">Description</p>
     </div>
     <div class="booking-wrapper">
-      <div class="container">
+
+      <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+        <h2>Book Now</h2>
+
         <%= simple_form_for([@gear, @booking]) do |f| %>
-        <div class="form-group">
-          <%= f.input :start_date, as: :date, start_year: Date.today.year, end_year: Date.today.year + 1, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.input :end_date, as: :date, start_year: Date.today.year, end_year: Date.today.year + 1, class: 'form-control' %>
-        </div>
-        <%= f.submit class: 'btn btn-primary' %>
+        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.button :submit, "Book", class: "btn btn-primary" %>
         <% end %>
       </div>
+
     </div>
     <div class="detail-top"></div>
   </div>
