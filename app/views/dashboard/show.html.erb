@@ -1,7 +1,14 @@
 <div class="dashboard-wrapper">
+
   <div class="my-bookings">
     <h2>My bookings</h2>
     <div class="booking-dashboard">
+      <% if current_user.gears.empty? %>
+      <p class="no-listings">Currently you have no bookings</p>
+        <%= link_to gears_path, class: "add-link" do %>
+        <div class="click-here-to-add">Click here to add a booking</div>
+        <% end %>
+      <% else %>
 
       <!--ITERATE OVER EXISTING BOOKINGS HERE</!-->
 
@@ -24,55 +31,47 @@
       <% end %>
 
       <% end %>
+      <% end %>
     </div>
-  </div>
+  </div> <!-- Closing my bookings -->
+
 
   <div class="my-listings">
-
-
     <h2>My listings</h2>
     <div class="listing-dashboard">
-
-      <% @gears.each do |gear| %>
-      <div class="booking">
-        <%= link_to gear_path(gear) do  %>
-        <% if gear.user_id == current_user.id %>
-        <% if gear.photo? %>
-        <%= gear.photo %>
-        <% else %>
-        <%= image_tag 'https://images.unsplash.com/photo-1517823382935-51bfcb0ec6bc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8b5c8bafdf01d553be4108029d2ed058&auto=format&fit=crop&w=1350&q=80', class: "test-image" %>
+    <% if current_user.gears.empty? %>
+        <p class="no-listings">Currently you have no listings</p>
+        <%= link_to new_gear_path, class: "add-link" do %>
+        <div class="click-here-to-add">Click here to add a listing</div>
         <% end %>
-        <h5 class="booking-name"><%= gear.name %></h5>
-        <p class="booking-description"><%= gear.description %></p>
-        <p class="booking-hover">Show booking details</p>
-        <% end %>
-      </div>
+      <% else %>
+      <% current_user.gears.each do |gear| %>
+        <div class="listing-flex-container">
+          <div class="listing">
+            <%= link_to gear_path(gear) do  %>
+              <% if gear.photo? %>
+                <%= gear.photo %>
+              <% else %>
+                <%= image_tag 'https://images.unsplash.com/photo-1517823382935-51bfcb0ec6bc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8b5c8bafdf01d553be4108029d2ed058&auto=format&fit=crop&w=1350&q=80', class: "test-image" %>
+              <% end %>
+              <h5 class="booking-name"><%= gear.name %></h5>
+              <p class="booking-description"><%= gear.description %></p>
+              <p class="listing-hover">Show listing details</p>
+              <p class="booking-category"><%= gear.category %></p>
+              <p class="booking-dates"><%= gear.price %>DKK per day</p>
+            <% end %>
+          </div>
+          <%= link_to gear_path(gear), class: "munkesnaps", method: :delete do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+        </div>
       <% end %>
       <% end %>
-
     </div>
-
-
-
-  </div>
-</div>
+  </div> <!-- Closing my listings -->
+</div> <!-- Closing dashboard wrapper -->
 
 
 
 
-<!-- <div class="container">
-  <h2>My Dashboard</h2>
-  <h4>My Gear</h4>
-  <ul>
-    <% @gears.each do |gear| %>
-    <% if gear.user_id == current_user.id %>
-    <li>
-      <p><%= gear.name %> | <%= gear.description %></p>
-    </li>
-    <% end %>
-    <% end %>
-  </ul>
-  <button class="btn"><%= link_to "Add New Equipment", new_gear_path  %></button>
-  <h4>My Upcoming Rentals</h4>
-</div>
--->
+
