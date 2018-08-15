@@ -57,12 +57,12 @@
         <h2>Choose category</h2>
         <ul>
           <% Gear.categories.each do |category| %>
-          <%= link_to gears_path(@gear, :q => category) do  %>
-          <li><p><%= category %></p></li>
+            <%= link_to gears_path(q: category) do  %>
+              <li><p><%= category %></p></li>
+            <% end %>
           <% end %>
-          <% end %>
-          <%= link_to gears_path(@gear, :q => "") do  %>
-          <li><p>Show All</p></li>
+          <%= link_to gears_path do  %>
+            <li><p>Show All</p></li>
           <% end %>
         </ul>
       </div>

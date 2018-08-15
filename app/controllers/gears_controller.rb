@@ -3,6 +3,7 @@ class GearsController < ApplicationController
 
   def index
     @gears = Gear.where.not(latitude: nil, longitude: nil)
+    @gears = @gears.where('category ILIKE ?', "%#{params[:q]}%") if params[:q]
 
     @markers = @gears.map do |gear|
       {

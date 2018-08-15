@@ -13,6 +13,7 @@ class Gear < ApplicationRecord
   validates :price, presence: true
   validates :description, presence: true, length: { minimum: 5 }
   validates :name, presence: true
+  validates :address, presence: true, :allow_blank => false
 
   mount_uploader :photo, PhotoUploader
 
