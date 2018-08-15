@@ -2,10 +2,14 @@ class GearsController < ApplicationController
   before_action :set_gear, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @gears = if params[:q]
-      Gear.where('category ILIKE ?', "%#{params[:q]}%")
-    else
-      Gear.all
+    @gears = Gear.where.not(latitude: nil, longitude: nil)
+
+    @markers = @gears.map do |gear|
+      {
+        lat: gear.latitude,
+        lng: gear.longitude,
+        infoWindow: { content: render_to_string(partial: "/gears/map_box", locals: { gear: gear }) }
+      }
     end
   end
 
@@ -46,7 +50,7 @@ class GearsController < ApplicationController
   end
 
   def gear_params
-    params.require(:gear).permit(:name, :category, :description, :price, :photo)
+    params.require(:gear).permit(:name, :category, :description, :price, :photo, :address)
   end
 
 end
