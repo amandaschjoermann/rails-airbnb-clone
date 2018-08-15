@@ -6,7 +6,7 @@ class Gear < ApplicationRecord
     %w[In-Water Above-Ground On-Land]
   end
 
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   belongs_to :user
 
   validates :category, inclusion: { in: Gear.categories }

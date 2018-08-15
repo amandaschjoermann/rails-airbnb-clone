@@ -43,6 +43,9 @@ class GearsController < ApplicationController
   end
 
   def destroy
+    @gear.destroy
+
+    redirect_to dashboard_path
   end
 
   private

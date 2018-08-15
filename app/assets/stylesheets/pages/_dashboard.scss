@@ -20,6 +20,9 @@
     font-size: 25px;
     position: absolute;
     top: -50px;
+    border-radius: 2px;
+    padding: 5px 10px;
+    background-color: rgba(32, 110, 178,0.2);
   }
 }
 
@@ -32,6 +35,9 @@
   background-color: rgba(253,253,253,1);
   box-shadow: 0 0 10px rgba(225,225,225,1);
   h2 {
+    border-radius: 2px;
+    padding: 5px 10px;
+    background-color: rgba(32, 110, 178,0.2);
     font-size: 25px;
     position: absolute;
     top: -50px;
@@ -111,40 +117,56 @@
 }
 
 .listing {
+  transition: 0.5s ease;
   position: relative;
-  color: white;
+  color: rgba(50,50,50,1);
   box-shadow: 0 0 2px rgba(100,100,100,0.5);
   border-radius: 3px;
-  background-color: #5c636e;
+  background-color: rgba(250,250,250,1);
   margin: 10px;
-  width: 455px;
+  width: 430px;
   height: 74px;
+  -webkit-filter: brightness(100%);
   img {
     box-shadow: 0 0 2px white;
     height: 63px;
     border-radius: 5px;
     margin: 5px;
   }
-  .listing-name {
+  .booking-name {
+    color: rgba(50,50,50,1);
     position: absolute;
     top: 10px;
     left: 115px;
   }
-  .listing-description {
+  .booking-description {
+    color: rgba(50,50,50,1);
     font-size: 16px;
     position: absolute;
     top: 35px;
     left: 115px;
   }
-  .listing-dates {
+  .booking-dates {
     border-radius: 2px;
     padding: 0px 5px;
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(0,0,0,0.4);
     color: white;
     font-size: 14px;
     position: absolute;
     top: 10px;
     right: 10px;
+    border-bottom-right-radius: 0px;
+  }
+  .booking-category {
+    color: white;
+    font-size: 18px;
+    border-radius: 1px;
+    background-color: #2470a0;
+    padding: 0 5px;
+    position: absolute;
+    top: 31px;
+    right: 10px;
+    border-top-right-radius: 0px;
   }
 }
 
@@ -189,10 +211,40 @@ p.booking-hover {
   padding: 2px 5px;
 }
 
+p.listing-hover {
+  color: white;
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  left: 150px;
+  top: 20px;
+  text-align: center;
+  background-color: rgba(50,50,50,0.9);
+  padding: 2px 5px;
+}
+
 .booking:hover .booking-hover {
   opacity: 1;
 }
 
 .booking:hover {
   -webkit-filter: brightness(50%);
+}
+
+.listing:hover .listing-hover {
+  opacity: 1;
+}
+
+.listing:hover {
+  -webkit-filter: brightness(50%);
+}
+
+
+.munkesnaps {
+  transition: 0.2s ease;
+}
+
+.listing-flex-container {
+  display: flex;
+  align-items: center;
 }
