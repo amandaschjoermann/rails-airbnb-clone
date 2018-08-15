@@ -14,12 +14,15 @@
   width: 350px;
 }
 
+.form-group.address {
+  width: 350px;
+}
+
 .form-group.category {
   width: 350px;
 }
 
 .form-group.photo {
-  margin-top: 30px;
   width: 250px;
 }
 
@@ -28,7 +31,6 @@
 }
 
 .form-group.description {
-  margin: 20px auto;
   width: 350px;
 }
 
@@ -68,7 +70,7 @@
   padding-left: 40px;
   padding-right: 40px;
   border-radius: 25px;
-  font-size: 25px;
+  font-size: 20px;
   color: white;
   background-color: rgba(32, 110, 178,1);
   margin-top: 10px;
