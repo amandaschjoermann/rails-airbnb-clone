@@ -3,7 +3,7 @@
   <div class="my-bookings">
     <h2>My bookings</h2>
     <div class="booking-dashboard">
-      <% if current_user.gears.empty? %>
+      <% if current_user.bookings.empty? %>
       <p class="no-listings">Currently you have no bookings</p>
         <%= link_to gears_path, class: "add-link" do %>
         <div class="click-here-to-add">Click here to add a booking</div>
