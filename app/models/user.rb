@@ -8,6 +8,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :bookings
-  has_many :gears
+  has_many :gears, dependent: :destroy
 
 end
