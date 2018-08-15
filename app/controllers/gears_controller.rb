@@ -3,7 +3,7 @@ class GearsController < ApplicationController
 
   def index
     @gears = Gear.where.not(latitude: nil, longitude: nil)
-    @gears = @gears.where('category ILIKE ?', "%#{params[:q]}%") if params[:q]
+    @gears = @gears.where(category: [params[:categories]]) if params[:categories]
 
     @markers = @gears.map do |gear|
       {
@@ -12,6 +12,7 @@ class GearsController < ApplicationController
         infoWindow: { content: render_to_string(partial: "/gears/map_box", locals: { gear: gear }) }
       }
     end
+    @categories = Gear.categories
   end
 
   def show
