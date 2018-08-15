@@ -1,4 +1,6 @@
-<%= simple_form_for (@gear) do |f| %>
+<!-- [...] all the fields -->
+<%= simple_form_for(@gear) do |f| %>
+
 <% if @gear.errors.any? %>
 <div class="errors-container">
   <ul>
@@ -8,9 +10,6 @@
   </ul>
 </div>
 <% end %>
-
-<!-- [...] all the fields -->
-<%= simple_form_for(@gear) do |f| %>
 
 <div class="form-group name">
   <%= f.text_field :name, class: 'form-control name', placeholder: "Name" %>
@@ -39,5 +38,3 @@
 
 <%= f.submit class: 'btn create-gear' %>
 <% end %>
-<% end %>
-
