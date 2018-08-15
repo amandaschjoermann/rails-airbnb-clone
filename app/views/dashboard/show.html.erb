@@ -2,39 +2,56 @@
   <div class="my-bookings">
     <h2>My bookings</h2>
     <div class="booking-dashboard">
-      <%= link_to "#" do %>
+
+      <!--ITERATE OVER EXISTING BOOKINGS HERE</!-->
+
+      <% @bookings.each do |booking| %>
+      <%= link_to booking_path(booking) do %>
       <div class="booking">
+        <% if booking.user_id == current_user.id %>
+        <% if booking.gear.photo? %>
+        <%= booking.gear.photo %>
+        <% else %>
         <%= image_tag 'https://images.unsplash.com/photo-1517823382935-51bfcb0ec6bc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8b5c8bafdf01d553be4108029d2ed058&auto=format&fit=crop&w=1350&q=80', class: "test-image" %>
-        <h5 class="booking-name">Name</h5>
-        <p class="booking-description">Description</p>
-        <p class="booking-dates">20.08.2018 - 21.08.2018</p>
-        <p class="booking-category">Category</p>
+        <% end %>
+        <h5 class="booking-name"><%= booking.gear.name %></h5>
+        <p class="booking-description"><%= booking.gear.description %></p>
+        <p class="booking-dates"><%= booking.start_date %> | <%= booking.end_date %></p>
+        <p class="booking-category"><%= booking.gear.category %></p>
         <p class="booking-hover">Show booking details</p>
+        <% end %>
       </div>
       <% end %>
-      <%= link_to "#" do %>
-      <div class="booking">
-        <%= image_tag 'https://images.unsplash.com/photo-1517823382935-51bfcb0ec6bc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8b5c8bafdf01d553be4108029d2ed058&auto=format&fit=crop&w=1350&q=80', class: "test-image" %>
-        <h5 class="booking-name">Name</h5>
-        <p class="booking-description">Description</p>
-        <p class="booking-dates">20.08.2018 - 21.08.2018</p>
-        <p class="booking-category">Category</p>
-        <p class="booking-hover">Show booking details</p>
-      </div>
+
       <% end %>
     </div>
   </div>
 
   <div class="my-listings">
+
+
     <h2>My listings</h2>
     <div class="listing-dashboard">
-      <!-- Add if statement -->
-      <p class="no-listings">Currently you have no listings</p>
-      <%= link_to new_gear_path, class: "add-link" do %>
-      <div class="click-here-to-add">Click here to add a listing</div>
+
+      <% @gears.each do |gear| %>
+      <div class="booking">
+        <% if gear.user_id == current_user.id %>
+        <% if gear.photo? %>
+        <%= gear.photo %>
+        <% else %>
+        <%= image_tag 'https://images.unsplash.com/photo-1517823382935-51bfcb0ec6bc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8b5c8bafdf01d553be4108029d2ed058&auto=format&fit=crop&w=1350&q=80', class: "test-image" %>
+        <% end %>
+        <h5 class="booking-name"><%= gear.name %></h5>
+        <p class="booking-description"><%= gear.description %></p>
+        <p class="booking-hover">Show booking details</p>
+        <% end %>
+      </div>
       <% end %>
-      <!-- <div class="listing"> </div> -->
+
     </div>
+
+
+
   </div>
 </div>
 
