@@ -27,31 +27,48 @@
   </div>
 
   <div class="detail-page-wrapper">
-
+    <%= link_to "#" do %>
+      <div class="see-on-map">
+        <p>Show map</p>
+      </div>
+    <% end %>
+    <%= link_to gears_path do %>
+      <div class="back-to-results">
+        <p>Go back</p>
+      </div>
+    <% end %>
     <h4 class="category-detail"><%= @gear.category %></h4>
-    <h1 class="name-detail"><%= @gear.name %></h1>
-    <ul class="icon-detail-list list-inline">
-      <li class="list-inline-item"><i class="icon-detail fas fa-dollar-sign"></i><%= @gear.price %></li>
-      <li class="list-inline-item"><i class="icon-detail fas fa-star"></i>
-        <%= @gear.rating %></li>
+    <div class="info-page-header">
+      <h1 class="name-detail"><%= @gear.name %></h1>
+      <hr/>
+      <p class="address-detail">
+        <i class="fas fa-map-marker-alt"></i> <%= @gear.address%>
+      </p>
+      <ul class="icon-detail-list list-inline">
+        <li class="list-inline-item"><%= @gear.price %> DKK</li>
+        <li class="list-inline-item">
+          <i class="far fa-star"></i><%= @gear.rating %>
+        </li>
       </ul>
-      <div class="description-wrapper">
-        <p class="description-detail"><%= @gear.description %></p>
-      </div>
-
-      <div class="booking-wrapper">
-
-        <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-          <h2>Book Now</h2>
-
-          <%= simple_form_for([@gear, @booking]) do |f| %>
-          <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-          <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-          <%= f.button :submit, "Book", class: "btn btn-primary" %>
-          <% end %>
-        </div>
-
-      </div>
-      <div class="detail-top"></div>
     </div>
+
+    <div class="description-wrapper">
+      <p class="description-detail"><%= @gear.description %></p>
+    </div>
+
+    <div class="booking-wrapper">
+
+      <div class="form-wrapper text-center" style="width: 400px; margin: 0 auto;">
+        <h5>What dates are you interested in?</h5>
+        <p>Choose dates</p>
+        <%= simple_form_for([@gear, @booking]) do |f| %>
+        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker form-control start-date"}, label: false, placeholder: "Start date" %>
+        <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker form-control start-date"}, label: false, placeholder: "End date"  %>
+        <%= f.button :submit, "BOOK", class: "btn book-button" %>
+        <% end %>
+      </div>
+
+    </div>
+    <div class="detail-top"></div>
   </div>
+</div>
