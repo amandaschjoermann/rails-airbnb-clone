@@ -35,6 +35,7 @@
 
       <% @gears.each do |gear| %>
       <div class="booking">
+        <%= link_to gear_path(gear) do  %>
         <% if gear.user_id == current_user.id %>
         <% if gear.photo? %>
         <%= gear.photo %>
@@ -46,6 +47,7 @@
         <p class="booking-hover">Show booking details</p>
         <% end %>
       </div>
+      <% end %>
       <% end %>
 
     </div>
