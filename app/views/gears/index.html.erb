@@ -55,16 +55,23 @@
       </div>
       <div class="modal-body">
         <h2>Choose category</h2>
-        <ul>
-          <% Gear.categories.each do |category| %>
-            <%= link_to gears_path(q: category) do  %>
-              <li><p><%= category %></p></li>
-            <% end %>
-          <% end %>
-          <%= link_to gears_path do  %>
-            <li><p>Show All</p></li>
-          <% end %>
-        </ul>
+
+<ul>
+  <form action="<%= gears_path %>" method="get", class: "inline-block">
+    <% @categories.each do |category| %>
+      <li><%= check_box_tag 'categories[]', category %>
+        <%= category %>
+      </li>
+    <% end %>
+    <input type="submit" value="Filter" />
+    <div class="btn">
+    <%= link_to gears_path do  %>
+      <p>Show All</p>
+    <% end %>
+    </div>
+  </form>
+ </ul>
+
       </div>
     </div>
   </div>
