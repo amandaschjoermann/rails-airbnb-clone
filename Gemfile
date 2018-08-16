@@ -25,6 +25,7 @@ gem "simple_calendar", "~> 2.0"
 gem "geocoder"
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'faker'
+gem 'pg_search'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
