@@ -16,5 +16,11 @@ class Gear < ApplicationRecord
   validates :address, presence: true, :allow_blank => false
 
   mount_uploader :photo, PhotoUploader
+  include PgSearch
+  pg_search_scope :search_gears,
+    against: [ :name, :description, :category ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 
 end

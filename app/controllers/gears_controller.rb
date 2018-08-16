@@ -3,7 +3,22 @@ class GearsController < ApplicationController
 
   def index
     @gears = Gear.where.not(latitude: nil, longitude: nil)
-    @gears = @gears.where(category: [params[:categories]]) if params[:categories]
+
+    # if params[:query].present?
+    #   sql_query = "name ILIKE :query OR description ILIKE :query"
+    #   @gears = Gear.where(sql_query, query: "%#{params[:query]}%")
+    # else
+    #   @gears = Gear.all
+    # end
+
+    if params[:categories]
+      @gears = @gears.where(category: [params[:categories]])
+    elsif params[:q].present?
+      sql_query = "name ILIKE :q OR description ILIKE :q OR category ILIKE :q"
+      @gears = @gears.where(sql_query, q: "%#{params[:q]}%")
+    end
+
+    # @gears = @gears.where(category: [params[:categories]]) if params[:categories]
 
     @markers = @gears.map do |gear|
       {
@@ -20,6 +35,10 @@ class GearsController < ApplicationController
     @booking = Booking.new
     @user = current_user
 
+    @marker = [{
+      lat: @gear.latitude,
+      lng: @gear.longitude
+    }]
   end
 
   def new

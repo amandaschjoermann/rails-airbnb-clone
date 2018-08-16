@@ -64,7 +64,8 @@
           <form action="<%= gears_path %>" method="get", class: "filter-form">
             <% @categories.each do |category| %>
               <li id="no-margin">
-                <div class="list-inline-item" id="<%= category.downcase %>"> <%= check_box_tag 'categories[]', category %> </div>
+
+                <div class="list-inline-item" id="filter-filter"> <%= check_box_tag 'categories[]', category %> </div>
                 <div  id="no-margin" class="list-inline-item category-filter <%= category.downcase %>"> <%= category %> </div>
               </li>
             <% end %>
