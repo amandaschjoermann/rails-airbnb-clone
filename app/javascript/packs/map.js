@@ -64,9 +64,9 @@ const styles = [
     {}
 ];
 
-const mapElement = document.getElementById('map');
+const mapElement = document.getElementById('show-map');
 if (mapElement) { // don't try to build a map if there's no div#map to inject in
-  const map = new GMaps({ el: '#map', lat: 0, lng: 0 });
+  const map = new GMaps({ el: '#show-map', lat: 0, lng: 0 });
   const markers = JSON.parse(mapElement.dataset.markers);
   map.addMarkers(markers);
   map.addStyle({
@@ -83,3 +83,5 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
     map.fitLatLngBounds(markers);
   }
 }
+
+

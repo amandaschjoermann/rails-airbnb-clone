@@ -20,18 +20,14 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+  <div id="map-showpage" data-markers="<%= @marker.to_json %>"></div>
 
   <div class="detail-page-wrapper">
-    <%= link_to "#" do %>
-      <div class="see-on-map">
-        <p>Show map</p>
-      </div>
-    <% end %>
-    <%= link_to gears_path do %>
-      <div class="back-to-results">
-        <p>Go back</p>
-      </div>
-    <% end %>
+
+
+    <%= link_to "Show map", "#", id: "map-button-show", class: "see-on-map" %>
+    <%= link_to "Go back", "#", class: "back-to-results" %>
+
     <h4 class="category-detail"><%= @gear.category %></h4>
     <div class="info-page-header">
       <h1 class="name-detail"><%= @gear.name %></h1>
@@ -66,4 +62,6 @@
     </div>
     <div class="detail-top"></div>
   </div>
+
 </div>
+

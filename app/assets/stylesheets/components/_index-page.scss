@@ -1,5 +1,5 @@
-
 .wrapper {
+  position: relative;
   text-align: center;
   color: rgba(50,50,50,0.9);
   width: 100%;
@@ -57,25 +57,44 @@ hr {
   padding: 0;
 }
 
-.card-map-wrapper {
+#card-map-wrapper {
   background-color: rgba(240,240,240,1);
-  padding-top: 10px;
-  display: flex;
+  padding-top: 50px;
+  padding-bottom: 30px;
   box-shadow: 0 0 5px rgba(150,150,150,1);
 }
 
-#map {
+#show-map {
+  box-shadow: 0 0 5px rgba(200,200,200,1);
   border: 2px solid rgba(220,220,220,1);
-  flex: 0 0 500px;
+  width: 100%;
   height: 100vh;
-  position: sticky !important; /* !important to override Gmaps inline CSS */
-  top: 0 !important;
+  .hide {
+    display: none;
+  }
 }
 
+.hide {
+  display: none;
+}
 
-
-
-
+.btn.show-on-map {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: rgba(150,150,150,1);
+  box-shadow: 0 0 5px rgba(200,200,200,1);
+  position: absolute;
+  right: 80px;
+  height: 50px;
+  top: 302px;
+  transition: 0.2s ease;
+  &:hover {
+    box-shadow: 0 0 5px rgba(150,150,150,1);
+    color: rgba(50,50,50,1);
+  }
+}
 
 
 
