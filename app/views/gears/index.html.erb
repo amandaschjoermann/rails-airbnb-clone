@@ -28,7 +28,7 @@
                 <i class="fas fa-heart"></i>
               </div>
               <% end %>
-              <p class="gear-category"><%= gear.category %></p>
+              <p class="gear-category <%= gear.category.downcase %>"><%= gear.category %></p>
             </div>
             <div class="gear-footer">
               <h4 class="gear-name"><strong><%= gear.name %></strong></h4>
@@ -49,29 +49,26 @@
 
 <!-- Pick a category filter Modal -->
 <div class="modal fade" id="choosecategory-Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog filter" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close close-button text-right" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>
-      <div class="modal-body">
-        <h2>Choose category</h2>
-
-        <ul>
-          <form action="<%= gears_path %>" method="get", class: "inline-block">
+      <p class="filter-categories">Categories:</p>
+      <div class="modal-body filter">
+        <ul class="filter-list text-center">
+          <form action="<%= gears_path %>" method="get", class: "filter-form">
             <% @categories.each do |category| %>
-            <li><%= check_box_tag 'categories[]', category %>
-              <%= category %>
-            </li>
+              <li id="no-margin">
+                <div class="list-inline-item" id="filter-filter"> <%= check_box_tag 'categories[]', category %> </div>
+                <div  id="no-margin" class="list-inline-item category-filter <%= category.downcase %>"> <%= category %> </div>
+              </li>
             <% end %>
-            <input type="submit" value="Filter" />
-            <div class="btn">
-              <%= link_to gears_path do  %>
-              <p>Show All</p>
-              <% end %>
-            </div>
+            <br>
+            <input type="submit" value="Filter" class="btn filter-button" />
+            <br>
+            <br>
+            <%= link_to "Show all", gears_path, id: "show-all-results" %>
           </form>
         </ul>
 

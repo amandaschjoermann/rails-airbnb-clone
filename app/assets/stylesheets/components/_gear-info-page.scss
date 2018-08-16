@@ -4,7 +4,6 @@
   width: 40%;
   height: 100vh;
   background-color: rgba(250,250,250,1);
-  box-shadow: 0 0 2px rgba(50,50,50,0.2);
 }
 
 .detail-top {
@@ -24,10 +23,19 @@
   bottom: 50px;
   font-size: 40px;
   position: absolute;
-  background-color: #2470a0;
   padding: 5px 10px;
   color: white;
-  box-shadow: 0 0 2px rgba(110,110,110,0.8)
+  box-shadow: 0 0 2px rgba(110,110,110,0.8);
+  .in-water {
+    background-color: #235784;
+  }
+  .on-land {
+    background-color: #2AB759;
+  }
+  .above-ground {
+    background-color: #ffbe00;
+    color: rgba(50,50,50,1);
+  }
 }
 
 .info-page-header {
@@ -170,8 +178,9 @@ a.back-to-results {
 }
 
 #map-showpage {
+  margin-top: 90px;
   width: 60%;
-  height: 100vh;
+  height: calc(100vh - 90px);
   opacity: 1;
   transition: 0.3s ease display;
   .hide {
