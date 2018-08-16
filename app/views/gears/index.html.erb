@@ -31,9 +31,13 @@
               <p class="gear-category <%= gear.category.downcase %>"><%= gear.category %></p>
             </div>
             <div class="gear-footer">
-              <h4 class="gear-name"><strong><%= gear.name %></strong></h4>
-              <p class="gear-price"><%= gear.price %>DKK</p>
-              <p class="gear-rating">Rating: <%= gear.rating %></p>
+              <h4 class="gear-name"><strong><%= gear.name.downcase %></strong></h4>
+              <hr class="line"/>
+              <p class="gear-price"><%= gear.price %> DKK per day</p>
+              <p class="gear-address"><i class="fas fa-map-marker"></i> &nbsp; <%= gear.address %></p>
+              <p class="gear-rating">
+                <i class="far fa-star"></i> <%= gear.rating %>
+              </p>
             </div>
             <% end %>
           </div>
@@ -60,6 +64,7 @@
           <form action="<%= gears_path %>" method="get", class: "filter-form">
             <% @categories.each do |category| %>
               <li id="no-margin">
+
                 <div class="list-inline-item" id="filter-filter"> <%= check_box_tag 'categories[]', category %> </div>
                 <div  id="no-margin" class="list-inline-item category-filter <%= category.downcase %>"> <%= category %> </div>
               </li>
