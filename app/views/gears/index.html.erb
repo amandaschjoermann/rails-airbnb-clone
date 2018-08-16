@@ -8,7 +8,9 @@
   <%= image_tag 'globe.png', class: "globe-icon" %>
 
 
-  <div class="card-map-wrapper">
+  <%= link_to "Show On Map", "#" , class: "btn show-on-map", id: "map-button" %>
+
+  <div id="card-map-wrapper" class="">
     <div class="container">
       <div class="row">
         <% @gears.each do |gear| %>
@@ -39,10 +41,11 @@
         <% end %>
       </div>  <!-- closing row -->
     </div> <!-- closing container -->
-    <div id="map" data-markers="<%= @markers.to_json %>">
-    </div>
   </div> <!-- closing card wrapper -->
 </div> <!-- closing page wrapper -->
+
+ <div id="show-map" class="" data-markers="<%= @markers.to_json %>">
+    </div>
 
 <!-- Pick a category filter Modal -->
 <div class="modal fade" id="choosecategory-Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -56,21 +59,21 @@
       <div class="modal-body">
         <h2>Choose category</h2>
 
-<ul>
-  <form action="<%= gears_path %>" method="get", class: "inline-block">
-    <% @categories.each do |category| %>
-      <li><%= check_box_tag 'categories[]', category %>
-        <%= category %>
-      </li>
-    <% end %>
-    <input type="submit" value="Filter" />
-    <div class="btn">
-    <%= link_to gears_path do  %>
-      <p>Show All</p>
-    <% end %>
-    </div>
-  </form>
- </ul>
+        <ul>
+          <form action="<%= gears_path %>" method="get", class: "inline-block">
+            <% @categories.each do |category| %>
+            <li><%= check_box_tag 'categories[]', category %>
+              <%= category %>
+            </li>
+            <% end %>
+            <input type="submit" value="Filter" />
+            <div class="btn">
+              <%= link_to gears_path do  %>
+              <p>Show All</p>
+              <% end %>
+            </div>
+          </form>
+        </ul>
 
       </div>
     </div>
