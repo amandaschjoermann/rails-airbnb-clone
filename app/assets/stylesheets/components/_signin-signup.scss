@@ -1,0 +1,22 @@
+.form-container {
+  display: flex;
+}
+
+.form-button {
+  background-color: #1874c3;
+  border: .01px solid black;
+  color: white;
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 4px 10px;
+  margin: 0px 2px;
+}
+
+.form-button a {
+  text-decoration: none;
+  color: white;
+}
+
+.push {
+  margin-left: auto;
+}
