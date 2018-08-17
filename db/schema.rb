@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_17_080013) do
+ActiveRecord::Schema.define(version: 2018_08_17_142657) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(version: 2018_08_17_080013) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "gear_pics", force: :cascade do |t|
+    t.bigint "gear_id"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["gear_id"], name: "index_gear_pics_on_gear_id"
+  end
+
   create_table "gears", force: :cascade do |t|
     t.string "category"
     t.integer "price"
@@ -36,10 +44,10 @@ ActiveRecord::Schema.define(version: 2018_08_17_080013) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.string "photo"
     t.string "address"
     t.float "latitude"
     t.float "longitude"
+    t.json "photos"
     t.index ["user_id"], name: "index_gears_on_user_id"
   end
 
@@ -63,4 +71,5 @@ ActiveRecord::Schema.define(version: 2018_08_17_080013) do
 
   add_foreign_key "bookings", "gears"
   add_foreign_key "bookings", "users"
+  add_foreign_key "gear_pics", "gears"
 end

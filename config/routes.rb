@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   resources :gears do
     resources :bookings, only: [ :new, :create ]
+    resources :gear_pics, only: [ :new, :create ]
   end
   resources :bookings
   get "dashboard", to: "dashboard#show", as: "dashboard"

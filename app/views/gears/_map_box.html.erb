@@ -1,5 +1,10 @@
 <div class="infobox-wrapper">
-  <%= cl_image_tag(gear.photo, :class => "infobox-image", :title => "First slide") %>
+  <% if gear.gear_pics.empty? %>
+    <%= image_tag("http://placecage.com/500/500", :class => "infobox-image", :title => "First slide") %>
+  <% else %>
+    <%= cl_image_tag(gear.gear_pics.first, :class => "infobox-image", :title => "First slide") %>
+
+    <% end %>
   <h5 class="infobox-name"> <%= gear.name %> </h5>
   <p class="infobox-price"> <%= gear.price %> DKK</p>
   <p class="infobox-category <%= gear.category.downcase %>"> <%= gear.category %> </p>
