@@ -1,5 +1,3 @@
-// $('.carousel.slide.carousel-fade').carousel();
-
-// $('.carousel.slide').carousel()
+$('.carousel.slide').carousel()
 
 

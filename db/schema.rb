@@ -44,10 +44,10 @@ ActiveRecord::Schema.define(version: 2018_08_17_142657) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.string "photo"
     t.string "address"
     t.float "latitude"
     t.float "longitude"
-    t.json "photos"
     t.index ["user_id"], name: "index_gears_on_user_id"
   end
 
