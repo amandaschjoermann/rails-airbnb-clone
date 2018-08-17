@@ -24,6 +24,7 @@ class GearsController < ApplicationController
       {
         lat: gear.latitude,
         lng: gear.longitude,
+        icon: ActionController::Base.helpers.asset_path(gear.category.downcase + ".png"),
         infoWindow: { content: render_to_string(partial: "/gears/map_box", locals: { gear: gear }) }
       }
     end
