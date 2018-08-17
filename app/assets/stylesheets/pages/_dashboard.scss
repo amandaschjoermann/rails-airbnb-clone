@@ -45,6 +45,7 @@
 }
 
 .booking-dashboard {
+  padding-top: 1px;
   margin: 40px;
   width: 475px;
   min-height: calc(100vh - 10px);
@@ -103,7 +104,6 @@
     color: white;
     font-size: 18px;
     border-radius: 1px;
-    background-color: #2470a0;
     padding: 0 5px;
     position: absolute;
     top: 31px;
@@ -157,7 +157,6 @@
     color: white;
     font-size: 18px;
     border-radius: 1px;
-    background-color: #2470a0;
     padding: 0 5px;
     position: absolute;
     top: 31px;
@@ -243,4 +242,13 @@ p.listing-hover {
 .listing-flex-container {
   display: flex;
   align-items: center;
+}
+
+a.munkesnaps {
+  text-decoration: none;
+  color: rgba(150,150,150,1);
+  transition: 0.3s ease;
+  &:hover {
+    color: rgba(50,50,50,1);
+  }
 }

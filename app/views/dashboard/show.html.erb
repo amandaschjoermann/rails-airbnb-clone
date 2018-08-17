@@ -24,7 +24,7 @@
         <h5 class="booking-name"><%= booking.gear.name %></h5>
         <p class="booking-description"> <%= booking.gear.description.truncate_words(5) %></p>
         <p class="booking-dates"> <%= booking.start_date %> | <%= booking.end_date %></p>
-        <p class="booking-category"> <%= booking.gear.category %></p>
+        <p class="booking-category <%= booking.gear.category.downcase %>"> <%= booking.gear.category %></p>
         <p class="booking-hover">Show booking details</p>
         <% end %>
       </div>
@@ -57,11 +57,11 @@
               <h5 class="booking-name"><%= gear.name %></h5>
               <p class="booking-description"><%= gear.description.truncate_words(5) %></p>
               <p class="listing-hover">Show listing details</p>
-              <p class="booking-category"><%= gear.category %></p>
+              <p class="booking-category <%= gear.category.downcase %> "><%= gear.category %></p>
               <p class="booking-dates"><%= gear.price %>DKK per day</p>
             <% end %>
           </div>
-          <%= link_to gear_path(gear), class: "munkesnaps", method: :delete do %>
+          <%= link_to gear_path(gear), id: "sweet-alert-demo", class: "munkesnaps", method: :delete do %>
             <i class="fas fa-trash-alt"></i>
           <% end %>
         </div>
