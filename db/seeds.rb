@@ -1,4 +1,5 @@
 require 'faker'
+GearPic.destroy_all
 Gear.destroy_all
 User.destroy_all
 
@@ -57,6 +58,8 @@ puts 'Finished!'
 puts 'Creating 15 new listings'
 
 url = "https://images.unsplash.com/photo-1526359395878-56f9a884ea5a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=09e1ea3717da77d318194432276af3bc&auto=format&fit=crop&w=800&q=60"
+gear_pic = GearPic.new
+gear_pic.remote_photo_url = url
 gear = Gear.new(
   name: "Mountainbike",
   address: "Nørrebrogade 115",
@@ -65,13 +68,16 @@ gear = Gear.new(
   category: "On-Land",
   price: rand(50..250)
 )
-  gear.user = [user, user1, user2, user3, user4].sample
-  gear.remote_photo_url = url
-  gear.save!
+gear.user = [user, user1, user2, user3, user4].sample
+gear.save!
+gear_pic.gear = gear
+gear_pic.save
 
 puts "1 listing done"
 
 url = "https://images.unsplash.com/photo-1531608139434-1912ae0713cd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=77fa1e4cad67c85d0053550c91f81c0c&auto=format&fit=crop&w=1351&q=80"
+gear_pic = GearPic.new
+gear_pic.remote_photo_url = url
 gear = Gear.new(
   name: "Racing Bike",
   address: "Langstrupvej 4, Fredensborg",
@@ -80,13 +86,16 @@ gear = Gear.new(
   category: "On-Land",
   price: rand(50..250)
 )
-  gear.user = [user, user1, user2, user3, user4].sample
-  gear.remote_photo_url = url
-  gear.save!
+gear.user = [user, user1, user2, user3, user4].sample
+gear.save!
+gear_pic.gear = gear
+gear_pic.save
 
 puts "2 listing done"
 
 url = "https://images.unsplash.com/photo-1522698624510-feb2a094e95c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=96dbbd0b03966856e75109fd67461de9&auto=format&fit=crop&w=1350&q=80"
+gear_pic = GearPic.new
+gear_pic.remote_photo_url = url
 gear = Gear.new(
   name: "Tent",
   address: "Røntoftegade 38, Dyssegård",
@@ -95,13 +104,16 @@ gear = Gear.new(
   category: "On-Land",
   price: rand(50..250)
 )
-  gear.user = [user, user1, user2, user3, user4].sample
-  gear.remote_photo_url = url
-  gear.save!
+gear.user = [user, user1, user2, user3, user4].sample
+gear.save!
+gear_pic.gear = gear
+gear_pic.save
 
 puts "3 listing done"
 
 url = "https://images.unsplash.com/photo-1518608774889-b04d2abe7702?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cdc8bcc00933d2d1c772721df2d75b16&auto=format&fit=crop&w=1300&q=80"
+gear_pic = GearPic.new
+gear_pic.remote_photo_url = url
 gear = Gear.new(
   name: "Snowboard",
   address: "Søbredden 43, Gentofte",
@@ -110,13 +122,16 @@ gear = Gear.new(
   category: "On-Land",
   price: rand(50..250)
 )
-  gear.user = [user, user1, user2, user3, user4].sample
-  gear.remote_photo_url = url
-  gear.save!
+gear.user = [user, user1, user2, user3, user4].sample
+gear.save!
+gear_pic.gear = gear
+gear_pic.save
 
 puts "4 listing done"
 
 url = "https://images.unsplash.com/photo-1504278542693-6e904de08f22?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c358ccb8fb392f171f2a0e1bc1200264&auto=format&fit=crop&w=1350&q=80"
+gear_pic = GearPic.new
+gear_pic.remote_photo_url = url
 gear = Gear.new(
   name: "Climbing gear",
   address: "Odense, Denmark",
@@ -125,13 +140,16 @@ gear = Gear.new(
   category: "On-Land",
   price: rand(50..250)
 )
-  gear.user = [user, user1, user2, user3, user4].sample
-  gear.remote_photo_url = url
-  gear.save!
+gear.user = [user, user1, user2, user3, user4].sample
+gear.save!
+gear_pic.gear = gear
+gear_pic.save
 
 puts "5 listing done"
 
 url = "https://images.unsplash.com/photo-1474402656496-6641a08dab21?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9091d27bd40d681912c303e3a3a08f23&auto=format&fit=crop&w=1350&q=80"
+gear_pic = GearPic.new
+gear_pic.remote_photo_url = url
 gear = Gear.new(
   name: "Surfboard",
   address: "Middelfart, Denmark",
@@ -140,13 +158,16 @@ gear = Gear.new(
   category: "In-Water",
   price: rand(50..250)
 )
-  gear.user = [user, user1, user2, user3, user4].sample
-  gear.remote_photo_url = url
-  gear.save!
+gear.user = [user, user1, user2, user3, user4].sample
+gear.save!
+gear_pic.gear = gear
+gear_pic.save
 
 puts "6 listing done"
 
 url = "https://images.unsplash.com/photo-1499858476316-343e284f1f67?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2984b44b9037f1f962c654d98623f164&auto=format&fit=crop&w=1350&q=80"
+gear_pic = GearPic.new
+gear_pic.remote_photo_url = url
 gear = Gear.new(
   name: "Kayak",
   address: "Hvidestensparken 1, Denmark",
@@ -155,13 +176,16 @@ gear = Gear.new(
   category: "In-Water",
   price: rand(50..250)
 )
-  gear.user = [user, user1, user2, user3, user4].sample
-  gear.remote_photo_url = url
-  gear.save!
+gear.user = [user, user1, user2, user3, user4].sample
+gear.save!
+gear_pic.gear = gear
+gear_pic.save
 
 puts "7 listing done"
 
 url = "https://images.unsplash.com/photo-1463694372132-6c267f6ba561?ixlib=rb-0.3.5&s=4173ee49a2beba34f21268653a6c221e&auto=format&fit=crop&w=1351&q=80"
+gear_pic = GearPic.new
+gear_pic.remote_photo_url = url
 gear = Gear.new(
   name: "Kayak",
   address: "Ågade 120, Copenhagen",
@@ -170,13 +194,16 @@ gear = Gear.new(
   category: "In-Water",
   price: rand(50..250)
 )
-  gear.user = [user, user1, user2, user3, user4].sample
-  gear.remote_photo_url = url
-  gear.save!
+gear.user = [user, user1, user2, user3, user4].sample
+gear.save!
+gear_pic.gear = gear
+gear_pic.save
 
 puts "8 listing done"
 
 url = "https://images.unsplash.com/photo-1477894387642-00a731c511b3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5f888f1a8cc23c0c17aa06f03aa05930&auto=format&fit=crop&w=1479&q=80"
+gear_pic = GearPic.new
+gear_pic.remote_photo_url = url
 gear = Gear.new(
   name: "Snorkeling set",
   address: "Jagtvej 100, Kbh",
@@ -186,12 +213,15 @@ gear = Gear.new(
   price: rand(50..250)
 )
 gear.user = [user, user1, user2, user3, user4].sample
-gear.remote_photo_url = url
 gear.save!
+gear_pic.gear = gear
+gear_pic.save
 
 puts "9 listing done"
 
 url = "https://images.unsplash.com/photo-1502933691298-84fc14542831?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b8ad16f37bd1d8fea868cca654f8d8a8&auto=format&fit=crop&w=1350&q=80"
+gear_pic = GearPic.new
+gear_pic.remote_photo_url = url
 gear = Gear.new(
   name: "Surfboard",
   address: "Lynge, Denmark",
@@ -200,13 +230,16 @@ gear = Gear.new(
   category: "In-Water",
   price: rand(50..250)
 )
-  gear.user = [user, user1, user2, user3, user4].sample
-  gear.remote_photo_url = url
-  gear.save!
+gear.user = [user, user1, user2, user3, user4].sample
+gear.save!
+gear_pic.gear = gear
+gear_pic.save
 
 puts "10 listing done"
 
 url = "https://images.unsplash.com/photo-1527732211531-a929ba19f2b3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b6d86b5709cabc1f29cb06ab81eaf489&auto=format&fit=crop&w=1350&q=80"
+gear_pic = GearPic.new
+gear_pic.remote_photo_url = url
 gear = Gear.new(
   name: "Parachute",
   address: "Hillerød, Denmark",
@@ -215,13 +248,16 @@ gear = Gear.new(
   category: "Above-Ground",
   price: rand(50..250)
 )
-  gear.user = [user, user1, user2, user3, user4].sample
-  gear.remote_photo_url = url
-  gear.save!
+gear.user = [user, user1, user2, user3, user4].sample
+gear.save!
+gear_pic.gear = gear
+gear_pic.save
 
 puts "11 listing done"
 
 url = "https://images.unsplash.com/photo-1495556614554-6d268cee358a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=158a16c6c73934acbf8c53caa5ee76f6&auto=format&fit=crop&w=1351&q=80"
+gear_pic = GearPic.new
+gear_pic.remote_photo_url = url
 gear = Gear.new(
   name: "Air Balloon",
   address: "Næstved, Denmark",
@@ -230,13 +266,16 @@ gear = Gear.new(
   category: "Above-Ground",
   price: rand(50..250)
 )
-  gear.user = [user, user1, user2, user3, user4].sample
-  gear.remote_photo_url = url
-  gear.save!
+gear.user = [user, user1, user2, user3, user4].sample
+gear.save!
+gear_pic.gear = gear
+gear_pic.save
 
 puts "12 listing done"
 
 url = "https://images.unsplash.com/photo-1528833583405-67dede7ccfb5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c1dd7d7c5380fc1ee2f7698d6fb959c2&auto=format&fit=crop&w=1353&q=80"
+gear_pic = GearPic.new
+gear_pic.remote_photo_url = url
 gear = Gear.new(
   name: "Parasailing",
   address: "Hundested, Denmark",
@@ -245,13 +284,16 @@ gear = Gear.new(
   category: "Above-Ground",
   price: rand(50..250)
 )
-  gear.user = [user, user1, user2, user3, user4].sample
-  gear.remote_photo_url = url
-  gear.save!
+gear.user = [user, user1, user2, user3, user4].sample
+gear.save!
+gear_pic.gear = gear
+gear_pic.save
 
 puts "13 listing done"
 
 url = "https://images.unsplash.com/photo-1471247511763-88a722fc9919?ixlib=rb-0.3.5&s=3a8e217a34b98ad0344b9bf325188f51&auto=format&fit=crop&w=1490&q=80"
+gear_pic = GearPic.new
+gear_pic.remote_photo_url = url
 gear = Gear.new(
   name: "Paraglider",
   address: "Husum, Denmark",
@@ -260,13 +302,24 @@ gear = Gear.new(
   category: "Above-Ground",
   price: rand(50..250)
 )
-  gear.user = [user, user1, user2, user3, user4].sample
-  gear.remote_photo_url = url
-  gear.save!
+gear.user = [user, user1, user2, user3, user4].sample
+gear.save!
+gear_pic.gear = gear
+gear_pic.save
+url = "https://images.unsplash.com/photo-1496429862132-5ab36b6ae330?ixlib=rb-0.3.5&s=78b91d65a3831bbc38d48069af9b3c38&auto=format&fit=crop&w=2551&q=80"
+url2 = "https://images.unsplash.com/photo-1453483154623-e9a16e3125b2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c1001cdf709e28e82d3a9ab718f43a2d&auto=format&fit=crop&w=1778&q=80"
+[url, url2].each do |uri|
+  gear_pic = GearPic.new
+  gear_pic.remote_photo_url = uri
+  gear_pic.gear = gear
+  gear_pic.save
+end
 
 puts "14 listing done"
 
 url = "https://images.unsplash.com/photo-1483301563007-8d0161daa1d0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a6c4f142474da0ceee0a3540ce085e5b&auto=format&fit=crop&w=1267&q=80"
+gear_pic = GearPic.new
+gear_pic.remote_photo_url = url
 gear = Gear.new(
   name: "Skydiving gear",
   address: "Aarhus, Denmark",
@@ -275,9 +328,10 @@ gear = Gear.new(
   category: "Above-Ground",
   price: rand(50..250)
 )
-  gear.user = [user, user1, user2, user3, user4].sample
-  gear.remote_photo_url = url
-  gear.save!
+gear.user = [user, user1, user2, user3, user4].sample
+gear.save!
+gear_pic.gear = gear
+gear_pic.save
 
 puts "15 listing done"
 

@@ -7,6 +7,7 @@ class Gear < ApplicationRecord
   end
 
   has_many :bookings, dependent: :destroy
+  has_many :gear_pics
   belongs_to :user
 
   validates :category, inclusion: { in: Gear.categories }
@@ -15,7 +16,6 @@ class Gear < ApplicationRecord
   validates :name, presence: true
   validates :address, presence: true, :allow_blank => false
 
-  mount_uploader :photo, PhotoUploader
   include PgSearch
   pg_search_scope :search_gears,
     against: [ :name, :description, :category ],

@@ -7,9 +7,11 @@
       <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-      <div class="carousel-item small active">
-      <%= cl_image_tag(@gear.photo, :class => "gear-image", :title => "First slide") %>
+      <% @gear.gear_pics.each_with_index do |gear_pic, i| %>
+      <div class="carousel-item small <%= i.zero? ? "active" : ""%>">
+        <%= cl_image_tag(gear_pic.photo, :class => "gear-image", :title => "First slide") %>
       </div>
+      <% end %>
     </div>
     <a class="carousel-control-prev" href="#roevsnaps" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>

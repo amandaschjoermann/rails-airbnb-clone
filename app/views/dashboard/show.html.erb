@@ -16,11 +16,11 @@
       <%= link_to booking_path(booking) do %>
       <div class="booking">
         <% if booking.user_id == current_user.id %>
-        <% if booking.gear.photo? %>
-        <%= cl_image_tag booking.gear.photo %>
-        <% else %>
-        <%= image_tag 'https://images.unsplash.com/photo-1517823382935-51bfcb0ec6bc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8b5c8bafdf01d553be4108029d2ed058&auto=format&fit=crop&w=1350&q=80', class: "test-image" %>
-        <% end %>
+          <% if booking.gear.gear_pics.empty? %>
+            <%= image_tag 'https://images.unsplash.com/photo-1517823382935-51bfcb0ec6bc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8b5c8bafdf01d553be4108029d2ed058&auto=format&fit=crop&w=1350&q=80', class: "test-image" %>
+          <% else %>
+            <%= cl_image_tag booking.gear.gear_pics.first.photo %>
+          <% end %>
         <h5 class="booking-name"><%= booking.gear.name %></h5>
         <p class="booking-description"> <%= booking.gear.description.truncate_words(5) %></p>
         <p class="booking-dates"> <%= booking.start_date %> | <%= booking.end_date %></p>
@@ -49,10 +49,10 @@
         <div class="listing-flex-container">
           <div class="listing">
             <%= link_to gear_path(gear) do  %>
-              <% if gear.photo? %>
-                <%= cl_image_tag gear.photo %>
-              <% else %>
+              <% if gear.gear_pics.empty? %>
                 <%= image_tag 'https://images.unsplash.com/photo-1517823382935-51bfcb0ec6bc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8b5c8bafdf01d553be4108029d2ed058&auto=format&fit=crop&w=1350&q=80', class: "test-image" %>
+              <% else %>
+                <%= cl_image_tag gear.gear_pics.first.photo %>
               <% end %>
               <h5 class="booking-name"><%= gear.name %></h5>
               <p class="booking-description"><%= gear.description.truncate_words(4) %></p>
